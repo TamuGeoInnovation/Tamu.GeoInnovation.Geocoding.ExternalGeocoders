@@ -231,7 +231,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
         {
             //// Set Bing Maps Developer Account credentials to access the Token Service
             //BingTokenService.CommonService commonService = new BingTokenService.CommonService();
-            //commonService.Credentials = new System.Net.NetworkCredential("149053", "Wright1!Micro");
+            //commonService.Credentials = new System.Net.NetworkCredential("149053", "");
 
             //// Set the token specification properties
             //BingTokenService.TokenSpecification tokenSpec = new BingTokenService.TokenSpecification();
