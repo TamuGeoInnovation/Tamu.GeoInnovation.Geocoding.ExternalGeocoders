@@ -90,7 +90,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
                             if (location != null)
                             {
 
-                                Geocode geocode = new Geocode(query.BaseOptions.Version);
+                                Geocode geocode = new Geocode(Convert.ToDouble(query.BaseOptions.Version.ToString()));
 
                                 geocode.InputAddress = query.StreetAddress;
                                 geocode.ParsedAddress = query.StreetAddress;
@@ -98,7 +98,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
 
                                 StreetAddress returnedAddress = null;
 
-                                if (query.BaseOptions.Version >= 2.95)
+                                if (Convert.ToDouble(query.BaseOptions.Version.ToString()) >= 2.95)
                                 {
 
                                     AddressComponents addressComponentsStreetAddress = AddressComponents.Number
@@ -116,12 +116,12 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
                                         | AddressComponents.SuiteType;
 
 
-                                    AddressNormalizer addressNormalizerStreetAddress = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsStreetAddress, query.BaseOptions.Version, AddressFormatType.LACounty);
+                                    AddressNormalizer addressNormalizerStreetAddress = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsStreetAddress, Convert.ToDouble(query.BaseOptions.Version.ToString()), AddressFormatType.LACounty);
                                     returnedAddress = addressNormalizerStreetAddress.Normalize(location.Address.Street);
                                 }
                                 else
                                 {
-                                    AddressNormalizer addressNormalizer = new AddressNormalizer(AddressParserType.TokenBased, query.BaseOptions.Version, AddressFormatType.LACounty);
+                                    AddressNormalizer addressNormalizer = new AddressNormalizer(AddressParserType.TokenBased, Convert.ToDouble(query.BaseOptions.Version.ToString()), AddressFormatType.LACounty);
                                     returnedAddress = addressNormalizer.NormalizeStreetAddress(location.Address.Street);
                                 }
 
@@ -210,7 +210,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
                 }
                 else if (googleResult.Status == GeocodeStatus.G_GEO_MISSING_ADDRESS || googleResult.Status == GeocodeStatus.G_GEO_UNAVAILABLE_ADDRESS || googleResult.Status == GeocodeStatus.G_GEO_UNKNOWN_ADDRESS )
                 {
-                    Geocode geocode = new Geocode(query.BaseOptions.Version);
+                    Geocode geocode = new Geocode(Convert.ToDouble(query.BaseOptions.Version.ToString()));
                     geocode.FM_ResultType = FeatureMatchingResultType.Unmatchable;
                     geocode.InputAddress = query.StreetAddress;
                     geocode.ParsedAddress = query.StreetAddress;
@@ -226,7 +226,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
                 }
                 else
                 {
-                    Geocode geocode = new Geocode(query.BaseOptions.Version);
+                    Geocode geocode = new Geocode(Convert.ToDouble(query.BaseOptions.Version.ToString()));
                     geocode.FM_ResultType = FeatureMatchingResultType.ExceptionOccurred;
                     geocode.InputAddress = query.StreetAddress;
                     geocode.ParsedAddress = query.StreetAddress;

@@ -42,7 +42,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.YahooSearchScraper
                 {
 
 
-                    Geocode geocode = new Geocode(query.BaseOptions.Version);
+                    Geocode geocode = new Geocode(Convert.ToDouble(query.BaseOptions.Version.ToString()));
 
                     if (!String.IsNullOrEmpty(result.ErrorMessage))
                     {
@@ -58,7 +58,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.YahooSearchScraper
 
 
                     StreetAddress returnedAddress = null;
-                    if (geocoderConfiguration.Version >= 2.95)
+                    if (Convert.ToDouble(geocoderConfiguration.Version.ToString()) >= 2.95)
                     {
 
                         AddressComponents addressComponentsStreetAddress = AddressComponents.Number
@@ -80,10 +80,10 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.YahooSearchScraper
                         AddressComponents addressComponentsZip = AddressComponents.Zip | AddressComponents.ZipPlus4;
 
 
-                        AddressNormalizer addressNormalizerStreetAddress = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsStreetAddress, geocoderConfiguration.Version, AddressFormatType.LACounty);
-                        AddressNormalizer addressNormalizerCity = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsCity, geocoderConfiguration.Version, AddressFormatType.LACounty);
-                        AddressNormalizer addressNormalizerState = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsState, geocoderConfiguration.Version, AddressFormatType.LACounty);
-                        AddressNormalizer addressNormalizerZip = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsZip, geocoderConfiguration.Version, AddressFormatType.LACounty);
+                        AddressNormalizer addressNormalizerStreetAddress = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsStreetAddress, Convert.ToDouble(geocoderConfiguration.Version.ToString()), AddressFormatType.LACounty);
+                        AddressNormalizer addressNormalizerCity = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsCity, Convert.ToDouble(geocoderConfiguration.Version.ToString()), AddressFormatType.LACounty);
+                        AddressNormalizer addressNormalizerState = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsState, Convert.ToDouble(geocoderConfiguration.Version.ToString()), AddressFormatType.LACounty);
+                        AddressNormalizer addressNormalizerZip = new AddressNormalizer(AddressParserType.TokenBased, addressComponentsZip, Convert.ToDouble(geocoderConfiguration.Version.ToString()), AddressFormatType.LACounty);
 
                         returnedAddress = addressNormalizerStreetAddress.Normalize(result.Street);
                         addressNormalizerCity.Normalize(returnedAddress, result.City, null);
@@ -107,7 +107,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.YahooSearchScraper
                     }
                     else
                     {
-                        AddressNormalizer addressNormalizer = new AddressNormalizer(AddressParserType.TokenBased, geocoderConfiguration.Version, AddressFormatType.LACounty);
+                        AddressNormalizer addressNormalizer = new AddressNormalizer(AddressParserType.TokenBased, Convert.ToDouble(geocoderConfiguration.Version.ToString()), AddressFormatType.LACounty);
                         returnedAddress = addressNormalizer.NormalizeStreetAddress(result.Street, result.City, result.StateCode, result.ZipCode);
 
                     }
