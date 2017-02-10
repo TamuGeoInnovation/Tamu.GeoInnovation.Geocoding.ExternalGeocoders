@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using USC.GISResearchLab.Common.Utils.Strings;
 using USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Yahoo;
 using Tamu.GeoInnovation.Geocoding.ExternalGeocoders.BingGeocodeService_V2;
+using Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2;
+//using Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2;
 
 namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
 {
@@ -140,7 +142,8 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
             GeocodeRequest geocodeRequest = new GeocodeRequest();
 
             // Set the credentials using a valid Bing Maps key
-            geocodeRequest.Credentials = new Tamu.GeoInnovation.Geocoding.ExternalGeocoders.BingGeocodeService_V2.Credentials();
+            
+            geocodeRequest.Credentials = new Credentials();
             geocodeRequest.Credentials.ApplicationId = key;
 
             // Set the location of the requested image
@@ -157,7 +160,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
             // Set the options to only return high confidence results 
             ConfidenceFilter[] filters = new ConfidenceFilter[1];
             filters[0] = new ConfidenceFilter();
-            filters[0].MinimumConfidence = Tamu.GeoInnovation.Geocoding.ExternalGeocoders.BingGeocodeService_V2.Confidence.High;
+            filters[0].MinimumConfidence = Confidence.High;
 
             // Add the filters to the options
             GeocodeOptions geocodeOptions = new GeocodeOptions();
@@ -167,7 +170,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
 
 
             // Make the geocode request
-            GeocodeServiceClient geocodeService = new GeocodeServiceClient("BasicHttpBinding_IGeocodeService");
+            Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2.GeocodeServiceClient geocodeService = new Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2.GeocodeServiceClient("BasicHttpBinding_IGeocodeService");
             GeocodeResponse geocodeResponse = geocodeService.Geocode(geocodeRequest);
 
 
