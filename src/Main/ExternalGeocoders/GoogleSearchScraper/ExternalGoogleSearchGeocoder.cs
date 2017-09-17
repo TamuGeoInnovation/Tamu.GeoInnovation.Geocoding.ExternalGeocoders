@@ -4,10 +4,10 @@ using USC.GISResearchLab.AddressProcessing.Core.Parsing.AddressParserManagers.Fa
 using USC.GISResearchLab.Common.Addresses;
 using USC.GISResearchLab.Common.Core.Geocoders.GeocodingQueries;
 using USC.GISResearchLab.Common.Geometries.Points;
+using USC.GISResearchLab.Geocoding.Core.Configurations;
 using USC.GISResearchLab.Geocoding.Core.Metadata.FeatureMatchingResults;
 using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 using USC.GISResearchLab.Geocoding.Core.OutputData;
-using USC.GISResearchLab.Geocoding.Core.Configurations;
 
 namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.GoogleSearchScraper
 {

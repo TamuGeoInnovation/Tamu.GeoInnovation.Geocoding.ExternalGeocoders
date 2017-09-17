@@ -1,14 +1,14 @@
-using System;
 using Reimers.Map.Geocoding;
+using System;
 using USC.GISResearchLab.AddressProcessing.Core.AddressNormalization.Implementations;
 using USC.GISResearchLab.AddressProcessing.Core.Parsing.AddressParserManagers.Factories;
 using USC.GISResearchLab.Common.Addresses;
 using USC.GISResearchLab.Common.Core.Geocoders.GeocodingQueries;
 using USC.GISResearchLab.Common.Geometries.Points;
+using USC.GISResearchLab.Geocoding.Core.Configurations;
 using USC.GISResearchLab.Geocoding.Core.Metadata.FeatureMatchingResults;
 using USC.GISResearchLab.Geocoding.Core.Metadata.Qualities;
 using USC.GISResearchLab.Geocoding.Core.OutputData;
-using USC.GISResearchLab.Geocoding.Core.Configurations;
 
 //using USC.GISResearchLab.Geocoding.Core.BingTokenService;
 

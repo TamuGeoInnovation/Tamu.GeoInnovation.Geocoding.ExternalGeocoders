@@ -1,10 +1,9 @@
 ﻿//using USC.GISResearchLab.Geocoding.Core.BingGeocodeService;
 using System;
 using System.Collections.Generic;
+using Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2;
 using USC.GISResearchLab.Common.Utils.Strings;
 using USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Yahoo;
-using Tamu.GeoInnovation.Geocoding.ExternalGeocoders.BingGeocodeService_V2;
-using Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2;
 //using Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2;
 
 namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
