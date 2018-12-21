@@ -80,10 +80,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\..\..\_RepoConfig\SolutionFiles\packages\Microsoft.SqlServer.Types.11.0.2\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Reimers.Map">
       <HintPath>..\..\libs\Reimers.Map.dll</HintPath>
       <Private>False</Private>
@@ -134,7 +130,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -145,7 +140,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="LICENSE.md" />
-    <None Include="packages.config" />
     <None Include="Properties\DataSources\Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2.GeocodeResponse.datasource" />
     <None Include="Properties\DataSources\Tamu.GeoInnovation.Geocoding.Core.BingGeocodeService_V2.GeocodeResponse1.datasource" />
     <None Include="Properties\Settings.settings">
@@ -193,24 +187,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\_RepoConfig\SolutionFiles\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
-      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\..\_RepoConfig\SolutionFiles\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
-      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\..\_RepoConfig\SolutionFiles\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
-      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\..\_RepoConfig\SolutionFiles\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
-      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="LICENSE.txt" />
-    <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AddressProcessing.Core\src\Main\AddressProcessing.Core.Dev.csproj">
