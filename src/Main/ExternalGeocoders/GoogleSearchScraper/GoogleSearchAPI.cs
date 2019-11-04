@@ -26,9 +26,9 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.GoogleSearchScrape
 
             // Build URL request to be sent to Yahoo!
             string url = "";
-            if (!String.IsNullOrEmpty(name ))
+            if (!String.IsNullOrEmpty(name))
             {
-                url +=  WebEncodingUtils.URLEncode(name);
+                url += WebEncodingUtils.URLEncode(name);
             }
             if (!String.IsNullOrEmpty(street))
             {
@@ -42,10 +42,10 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.GoogleSearchScrape
             {
                 url += WebEncodingUtils.URLEncode(" " + stateCode);
             }
-            
+
             url = apiUrl + url;
             url += "&btnG=Search&aq=f&aqi=&aql=&oq=";
-            url = url.Replace(" ", "+");  
+            url = url.Replace(" ", "+");
 
             try
             {

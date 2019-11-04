@@ -27,7 +27,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.YahooSearchScraper
             // Build URL request to be sent to Yahoo!
             string url = "";
             url += "stx=";
-            if (!String.IsNullOrEmpty(name ))
+            if (!String.IsNullOrEmpty(name))
             {
                 url += WebEncodingUtils.URLEncode(name);
             }
@@ -52,7 +52,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.YahooSearchScraper
             {
                 url += WebEncodingUtils.URLEncode(" " + zipCode);
             }
-            
+
             url = apiUrl + url;
             url = url.Replace(" ", "+");
 

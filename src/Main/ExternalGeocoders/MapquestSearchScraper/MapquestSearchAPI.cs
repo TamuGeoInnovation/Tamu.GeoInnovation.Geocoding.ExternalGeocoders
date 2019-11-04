@@ -29,7 +29,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.MapquestSearchScra
             string url = "";
 
             url += "cat=";
-            if (!String.IsNullOrEmpty(name ))
+            if (!String.IsNullOrEmpty(name))
             {
                 url += WebEncodingUtils.URLEncode(name);
             }
@@ -58,7 +58,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.MapquestSearchScra
             {
                 url += WebEncodingUtils.URLEncode(zipCode);
             }
-            
+
             url = apiUrl + url;
             url = url.Replace(" ", "+");
 
@@ -197,7 +197,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.MapquestSearchScra
                                         XmlNode zipNode = firstNode.SelectSingleNode("//span[@class='postal-code']");
                                         if (zipNode != null)
                                         {
-                                            recordZip= zipNode.InnerText;
+                                            recordZip = zipNode.InnerText;
                                             if (!String.IsNullOrEmpty(recordZip))
                                             {
                                                 recordZip = URLUtils.HTMLDecode(recordZip);

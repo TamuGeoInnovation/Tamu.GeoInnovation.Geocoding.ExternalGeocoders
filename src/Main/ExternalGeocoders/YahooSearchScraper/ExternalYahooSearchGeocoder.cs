@@ -113,7 +113,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.YahooSearchScraper
                     }
 
                     geocode.MatchedAddress = RelaxableStreetAddress.FromStreetAddress(returnedAddress);
-                    
+
                     if (String.IsNullOrEmpty(geocode.MatchedAddress.City))
                     {
                         geocode.MatchedAddress.City = result.City;

@@ -208,9 +208,9 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
             //                }
             //            }
             //        }
-                    
 
-                    
+
+
             //        address.MatchType = StringUtils.ConcatArrayWithCharBetween(geocodeResult.MatchCodes, ";");
 
             //        if (isUphierarchy)
@@ -253,7 +253,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
             return token;
 
         }
-    
+
 
     }
 }

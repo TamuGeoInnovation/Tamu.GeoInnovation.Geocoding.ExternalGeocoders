@@ -141,7 +141,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
             GeocodeRequest geocodeRequest = new GeocodeRequest();
 
             // Set the credentials using a valid Bing Maps key
-            
+
             geocodeRequest.Credentials = new Credentials();
             geocodeRequest.Credentials.ApplicationId = key;
 

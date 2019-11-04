@@ -63,7 +63,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Yahoo
                         geocode.InputAddress = query.StreetAddress;
                         geocode.ParsedAddress = query.StreetAddress;
 
-                       if (isAmbigous)
+                        if (isAmbigous)
                         {
                             geocode.FM_ResultType = FeatureMatchingResultType.Ambiguous;
                         }
@@ -276,7 +276,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Yahoo
                                 geocode.MatchedFeature.FeatureMatchTypes = FeatureMatchTypes.Unknown;
                                 geocode.GeocodeQualityType = GeocodeQualityType.Unknown;
                                 break;
-                            
+
                         }
 
 
@@ -363,7 +363,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Yahoo
 
                         //geocode.Geometry = new Point(Convert.ToDouble(result.Longitude), Convert.ToDouble(result.Latitude));
 
-                        
+
 
                         //switch (result.Precision)
                         //{

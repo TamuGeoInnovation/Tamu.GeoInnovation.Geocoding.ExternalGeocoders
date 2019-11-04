@@ -55,7 +55,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
                 //address.Country = "EG";
                 //address.Street = query.StreetAddress.StreetName;
 
-               
+
 
                 DateTime startTime = DateTime.Now;
 
@@ -127,12 +127,12 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
 
                                 //StreetAddress returnedAddress = new StreetAddress();
                                 //returnedAddress.StreetName = location.Address.Street;
-                                
+
                                 geocode.MatchedAddress = RelaxableStreetAddress.FromStreetAddress(returnedAddress);
                                 geocode.MatchedAddress.City = location.Address.City;
                                 geocode.MatchedAddress.State = location.Address.Region;
                                 geocode.MatchedAddress.ZIP = location.Address.Zip;
-                                
+
                                 geocode.MatchedFeatureAddress = RelaxableStreetAddress.FromStreetAddress(returnedAddress);
                                 geocode.MatchedFeatureAddress.City = location.Address.City;
                                 geocode.MatchedFeatureAddress.State = location.Address.Region;
@@ -208,7 +208,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Google
                         }
                     }
                 }
-                else if (googleResult.Status == GeocodeStatus.G_GEO_MISSING_ADDRESS || googleResult.Status == GeocodeStatus.G_GEO_UNAVAILABLE_ADDRESS || googleResult.Status == GeocodeStatus.G_GEO_UNKNOWN_ADDRESS )
+                else if (googleResult.Status == GeocodeStatus.G_GEO_MISSING_ADDRESS || googleResult.Status == GeocodeStatus.G_GEO_UNAVAILABLE_ADDRESS || googleResult.Status == GeocodeStatus.G_GEO_UNKNOWN_ADDRESS)
                 {
                     Geocode geocode = new Geocode(Convert.ToDouble(query.BaseOptions.Version.ToString()));
                     geocode.FM_ResultType = FeatureMatchingResultType.Unmatchable;
