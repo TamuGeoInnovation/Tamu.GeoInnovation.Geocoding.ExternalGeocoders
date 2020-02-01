@@ -163,7 +163,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.GoogleSearchScrape
             return Clone();
         }
 
-        public virtual SingleThreadedFeatureHierarchyGeocoder Clone()
+        public new SingleThreadedFeatureHierarchyGeocoder Clone()
         {
             return (SingleThreadedFeatureHierarchyGeocoder)MemberwiseClone();
         }

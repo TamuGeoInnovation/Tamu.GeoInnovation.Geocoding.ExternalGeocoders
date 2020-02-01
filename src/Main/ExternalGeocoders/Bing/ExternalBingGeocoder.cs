@@ -1,6 +1,7 @@
 using Reimers.Map.Geocoding;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using USC.GISResearchLab.AddressProcessing.Core.AddressNormalization.Implementations;
 using USC.GISResearchLab.AddressProcessing.Core.Parsing.AddressParserManagers.Factories;
 using USC.GISResearchLab.Common.Addresses;
@@ -97,7 +98,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
 
                             if (!String.IsNullOrEmpty(result.Warning))
                             {
-                                string here = "";
+                                Serilog.Log.Warning(MethodBase.GetCurrentMethod().GetType().Name + " " + MethodBase.GetCurrentMethod().Name + ": " + result.Warning);
                             }
 
                             switch (result.Precision)
@@ -257,7 +258,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Bing
             return Clone();
         }
 
-        public virtual SingleThreadedFeatureHierarchyGeocoder Clone()
+        public new SingleThreadedFeatureHierarchyGeocoder Clone()
         {
             return (SingleThreadedFeatureHierarchyGeocoder)MemberwiseClone();
         }

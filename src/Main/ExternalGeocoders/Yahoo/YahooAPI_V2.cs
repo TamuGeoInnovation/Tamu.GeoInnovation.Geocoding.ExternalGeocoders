@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Reflection;
 using System.Xml.Serialization;
 using USC.GISResearchLab.Common.Utils.Encoding;
 
@@ -195,6 +196,7 @@ namespace USC.GISResearchLab.Geocoding.Core.ExternalGeocoders.Yahoo
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, MethodBase.GetCurrentMethod().GetType().Name + " " + MethodBase.GetCurrentMethod().Name + ": " + e.Message);
                 YahooAddress address = new YahooAddress(street, city, stateCode, zipCode, latitude, longitude, precison, warning, errorMessage);
                 ret.Add(address);
             }
