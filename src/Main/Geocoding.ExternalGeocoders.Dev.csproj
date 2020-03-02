@@ -80,7 +80,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Reimers.Map">
       <HintPath>..\..\libs\Reimers.Map.dll</HintPath>
       <Private>False</Private>
@@ -92,16 +91,12 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -208,11 +203,6 @@
     <ProjectReference Include="..\..\..\Common.Core.Configurations\Src\Main\Common.Core.Configurations.Dev.csproj">
       <Project>{CA57DD09-BCF7-439A-A6FB-6FCBE125FB71}</Project>
       <Name>Common.Core.Configurations.Dev</Name>
-      <Private>False</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Common.Core.ExceptionHandling\Src\Main\Common.Core.ExceptionHandling.Dev.csproj">
-      <Project>{4A553AE2-F5D1-42B6-BE3A-8442DF626EAF}</Project>
-      <Name>Common.Core.ExceptionHandling.Dev</Name>
       <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Common.Core.Geo.Geometries\Src\Main\Common.Core.Geo.Geometries.Dev.csproj">
